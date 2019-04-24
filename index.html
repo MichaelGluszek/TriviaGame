@@ -12,11 +12,11 @@
 
 <body>
     <h1>Space Trivia Game</h1>
-    <div class="timer">
-        <h3>Time Remaining:</h3>
-    </div>
-    <button type="button" class="btn btn-secondary" id="startBtn">Start</button>
     
+        <h3>Time Remaining:<div id ="timer">50</div></h3>
+    
+    <button type="button" class="btn btn-secondary" id="startBtn">Start</button>
+
     <br>
     <br>
     <br>
@@ -33,7 +33,9 @@
     <br>
     <br>
 
-    <h3>What is the name of our galaxy?</h3>
+    <div id="questions">
+        <h3>What is the name of our galaxy?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">Galactic Way
         <input type="radio" class="option" value="false">Supernova
@@ -42,7 +44,9 @@
     </form>
     <br>
 
-    <h3>What is the sixth planet from our sun?</h3>
+    <div id="questions">
+        <h3>What is the sixth planet from our sun?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="true">Saturn
         <input type="radio" class="option" value="false">Jupiter
@@ -51,7 +55,9 @@
     </form>
     <br>
 
-    <h3>What is the second largest planet in our galaxy?</h3>
+    <div id="questions">
+        <h3>What is the second largest planet in our galaxy?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="true">Saturn
         <input type="radio" class="option" value="false">Uranus
@@ -60,7 +66,9 @@
     </form>
     <br>
 
-    <h3>What is the 8th planet from our sun?</h3>
+    <div id="questions">
+        <h3>What is the 8th planet from our sun?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">Saturn
         <input type="radio" class="option" value="true">Uranus
@@ -69,7 +77,9 @@
     </form>
     <br>
 
-    <h3>How many planets are in our solar system? (Not including pluto as a planet)</h3>
+    <div id="questions">
+        <h3>How many planets are in our solar system? (Not including pluto as a planet)</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">10
         <input type="radio" class="option" value="false">9
@@ -78,7 +88,9 @@
     </form>
     <br>
 
-    <h3>What year did man land on the moon?</h3>
+    <div id="questions">
+        <h3>What year did man land on the moon?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">1998
         <input type="radio" class="option" value="false">1996
@@ -87,7 +99,9 @@
     </form>
     <br>
 
-    <h3>What is at the center of our galaxy?</h3>
+    <div id="questions">
+        <h3>What is at the center of our galaxy?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">moon
         <input type="radio" class="option" value="true">black hole
@@ -96,7 +110,9 @@
     </form>
     <br>
 
-    <h3>When a star explodes, we call it a_______.</h3>
+    <div id="questions">
+        <h3>When a star explodes, we call it a_______.</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">black hole
         <input type="radio" class="option" value="false">white dwarf
@@ -105,7 +121,9 @@
     </form>
     <br>
 
-    <h3>What planet are humans planning to colonize within the next 25 years?</h3>
+    <div id="questions">
+        <h3>What planet are humans planning to colonize within the next 25 years?</h3>
+    </div>
     <form>
         <input type="radio" class="option" value="false">Mercury
         <input type="radio" class="option" value="true">Mars
@@ -114,7 +132,7 @@
     </form>
     <br>
 
-    <div class="timer">
+    <div id="timer">
         <h3>Time Remaining:</h3>
     </div>
     <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
@@ -123,7 +141,7 @@
     <br>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    
+
 
 </body>
 
