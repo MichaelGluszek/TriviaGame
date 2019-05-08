@@ -1,10 +1,13 @@
 body {
     color: white;
+    font-weight: bold;
     text-align: center;
     background-image: url('../images/stars_bkg.jpg')
 
 }
 
-#startBtn {
-color: black;
+
+.btn {
+    color: black;
+    font-weight: bold;
 }

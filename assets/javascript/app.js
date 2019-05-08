@@ -1,43 +1,97 @@
-
-  $("#startBtn").on("click", countDown.start);
-  $(".option").on("click", countDown.correctCount);
-
-  $("#submitBtn").on("click", countDown.stop);
-  $("#resetBtn").on("click", countDown.reset);
-
-  let period;
-  let countDown = false;
-  let corrAns = 0;
-
-    let countDown ={
-
-    time: 60,
-
-    
-// 
-    }
+$(function() {
   
+$("#startBtn").on("click", stopwatch.start);
+$(".option").on("click", stopwatch.correctCount);
+$("#submitBtn").on("click", stopwatch.stop);
+$("#resetBtn").on("click", stopwatch.reset);
+});
 
-function timeConverter(t) {
+var intervalId;
+var clockRunning = false;
+var correctAnswers = 0;
 
-let minutes = Math.floor(t / 60);
-let seconds = t - (minutes * 60);
+var stopwatch = {
 
-if (seconds < 10) {
-  seconds = "0" + seconds;
-}
+  time: 60,
 
- if (minutes === 0) {
-   minutes = "00";
-}
+  correctCount: function () {
 
-else if (minutes < 10) {
-  minutes = "0" + minutes;
-}
+    if (clockRunning) {
+      var selection = $(this).val().trim();
+      if (selection === "true" && correctAnswers < 9) {
+        correctAnswers++
+      }
 
-return minutes + ":" + seconds
+      else if (correctAnswers > 7) {
+        stopwatch.stop();
+      }
+    }
+
+    else if (!clockRunning) {
+      event.preventDefault();
+    }
+  },
+
+  reset: function () {
+
+    stopwatch.stop();
+    stopwatch.time = 60;
+    correctAnswers = 0;
+    $("#timer").text("60");
+    $("input[type='radio']").prop("checked", false);
+  },
+
+  start: function () {
+    if (!clockRunning) {
+      intervalId = setInterval(stopwatch.count, 1000);
+      clockRunning = true;
+    }
+  },
+
+  stop: function () {
+    clearInterval(intervalId);
+    clockRunning = false;
+
+    $("#timer").html("Score:" + correctAnswers + "/9");
+  },
+
+  count: function () {
+
+    if (stopwatch.time > 0) {
+      stopwatch.time--;
+      var converted = stopwatch.timeConverter(stopwatch.time);
+
+      $("#timer").text(converted);
+    }
+
+
+    else {
+      stopwatch.stop();
+    }
+  },
+
+
+  timeConverter: function (t) {
+
+    let minutes = Math.floor(t / 60);
+    let seconds = t - (minutes * 60);
+
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    if (minutes === 0) {
+      minutes = "00";
+    }
+
+    else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    return minutes + ":" + seconds
 
 
 
 
+  }
 };
