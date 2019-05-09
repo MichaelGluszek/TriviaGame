@@ -53,7 +53,7 @@ var stopwatch = {
     clockRunning = false;
 
     $("#timer").html("Score:" + correctAnswers + "/9");
-    $("h3").html("");
+    $("h2").html("");
   },
 
   count: function () {
